@@ -9,6 +9,8 @@
 ;                                                               ;
 ;---------------------------------------------------------------;
 
+(def _ :changeme)
+
 (deftest numbers
   (testing "I know how to work with numbers"
     (is (= 42  (_ 40 2)))
