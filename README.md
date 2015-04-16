@@ -2,12 +2,12 @@
 
 This project contains the code exercise for the Sytac Clojure Workshop.
 
-![Sytac IT Consulting](resources/logo.png)
-
 ## Usage
 
 The exercises are provided in the form of failing tests. Each chapter is associated
 with a folder within `test`. The exercise is passed if all the tests pass.
+
+![Sytac IT Consulting](resources/logo.png)
 
 ## License
 
