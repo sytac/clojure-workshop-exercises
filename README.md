@@ -2,6 +2,8 @@
 
 This project contains the code exercise for the Sytac Clojure Workshop.
 
+![Sytac IT Consulting](resources/logo.png)
+
 ## Usage
 
 The exercises are provided in the form of failing tests. Each chapter is associated
