@@ -46,3 +46,9 @@
           nil   _
           true  _
           false _)))
+
+(deftest side-effects
+  (testing "A do expression disregards all values except the last: only useful for side effects"
+    (is (= _ (do
+               (println "println always returns nil")
+               42)))))
