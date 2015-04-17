@@ -33,3 +33,16 @@
                :bar 42} :foo)))
     (is (= _ (:foo {:foo 1
                     :bar 42})))))
+
+(deftest truthiness
+  (testing "Most of the things are truthy, except when they're falsey!"
+    (are [value expected] (= expected (boolean value))
+          1     _
+          :a    _
+          "b"   _
+          []    _
+          {}    _
+          ()    _
+          nil   _
+          true  _
+          false _)))
