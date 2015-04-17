@@ -27,8 +27,25 @@
    (is (= _ (first [:a :b :c])))
    (is (= _ (first '(:a :b :c))))
 
+   ; More elements!
+   (is (= _ (second [:a :b :c])))
+   (is (= :c (_ [:a :b :c])))
+   (is (= _ (nth [:a :b :c] 0)))
+   (is (= _ (nth [:a :b :c] 10 :false)))
+
+   ; Seq in, seq out
+   (is (= _ (take 3 [:a :b :c :d])))
+   (is (= _ (drop 3 [:a :b :c :d])))
+   (is (= _ (take-while odd? [1 3 5 6 7 8])))
+   (is (= _ (drop-while odd? [1 3 5 6 7 8])))
+
    ; Keep all but the first element
    (is (= _ (rest [:a :b :c])))
+   (is (= _ (next [:a :b :c])))
+
+   ; Subtle differences
+   (is (= _ (= (rest [])
+               (next []))))
 
    ; remember: maps are sequences of key/value pairs
    (is (= _ (seq {:a "apple"
