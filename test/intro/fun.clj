@@ -42,7 +42,12 @@
          [2 3 4 5] (increment-all [1 2 3 4])
          [2 4]     (remove-odds [1 2 3 4])
          4         ((apply-twice inc 2))
-         42        ((apply-implicit-first + 5) 37))))
+         42        ((apply-implicit-first + 5) 37)))
+  (testing "Let's imagine that Clojure didn't have a let form. Use functions to emulate its behavior"
+    (is (= (let [a 12
+                 b 30]
+             (+ a b))
+           _))))
 
 (deftest seq-processing-functions
   (testing "Explore the power of the Clojure standard library"
