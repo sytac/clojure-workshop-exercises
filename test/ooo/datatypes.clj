@@ -14,7 +14,7 @@
   (perimeter [this] "Calculates the perimeter of the shape")
   (wider-than [this that] "Returns true if this has an area bigger than that, false otherwise"))
 
-; Create a Rectangle and Square records that implements the Shape protocol and the Comparable interface
+; Create a Rectangle and Square records that implement the Shape protocol and the Comparable interface
 (unfinished ->Rectangle ->Square)
 
 (fact "I can calculate the area of a Rectangle"
@@ -23,7 +23,11 @@
       (area (->Square 4))             => 16
       (perimeter (->Square 4))        => 16
       (wider-than (->Square 4)
-                  (->Rectangle 4 2))) => true
+                  (->Rectangle 4 2)) => true
+
+      (provided
+       (->Rectangle 4 2) => :wrong
+       (->Square 4)      => :wrong))
 
 ; Here is a protocol that implements a datastore
 (defprotocol Store
