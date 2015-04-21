@@ -16,8 +16,8 @@
   (testing "I can get stuff out of maps"
     (is (= "booya!" (_ {:say-what "booya!"})))
     (is (= "booya!" ({:say-what "booya!"} _)))
-    (is (= "booya!" (get {:say-what "booya"} _)))
-    (is (= "booya!" (get {:say-what "booya"} _ "booya!")))))
+    (is (= "booya!" (get {:say-what "booya!"} _)))
+    (is (= "booya!" (get {:say-what "booya!"} _ "booya!")))))
 
 (deftest all-about-sequences
  (testing "Functions that accept sequences work on all collections"
