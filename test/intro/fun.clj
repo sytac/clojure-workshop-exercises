@@ -51,11 +51,11 @@
 
 (deftest seq-processing-functions
   (testing "Explore the power of the Clojure standard library"
-    (= ["1" "2" "3"] (map _ [1 2 3]))
-    (= _ (filter odd? [1 2 3]))
-    (= _ (apply + [1 2 3]))
-    (= _ (let [sum-of-chars _]
-           (reduce sum-of-chars ["one" "two" "three"]))))
+    (is (= ["1" "2" "3"] (map _ [1 2 3])))
+    (is (= _ (filter odd? [1 2 3])))
+    (is (= _ (apply + [1 2 3])))
+    (is (= _ (let [sum-of-chars _]
+               (reduce sum-of-chars ["one" "two" "three"])))))
   (testing "Write a function that returns the indexes of the elements with an odd size"
-    (= [1 2 3] (let [odd-indexes _]
-                 (odd-indexes ["one" "two" "three" "four"])))))
+    (is (= [1 2 3] (let [odd-indexes _]
+                     (odd-indexes ["one" "two" "three" "four"]))))))
