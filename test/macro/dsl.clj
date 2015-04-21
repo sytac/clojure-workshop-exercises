@@ -19,6 +19,7 @@
 ; You need to write the piped macro that works as follows:
 ;
 ; (macroexpand '(piped (println "foo") (println "bar") (head 1) (println "foo"))
+; ->
 ; (let [stdin ""
 ;       stdou (with-out-str (println "foo"))]
 ;   (let [stdin stdout
