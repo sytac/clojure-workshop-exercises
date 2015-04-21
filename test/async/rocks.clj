@@ -1,5 +1,4 @@
 (ns async.rocks
-  (:use clojure.test)
   (:require [clojure.core.async :refer :all]))
 
 ;------------------;
@@ -25,10 +24,7 @@
 ; new moves from the player
 (defn rand-player
   "Create a named player and return a channel to report moves."
-  [name]
-  (let [out (chan)]
-    (go (while true (>! out [name (rand-nth MOVES)])))
-    out))
+  [name])
 
 (defn winner
   "Based on two moves, return the name of the winner."
