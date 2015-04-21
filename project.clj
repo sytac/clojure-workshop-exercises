@@ -4,6 +4,7 @@
   :license {:name "MIT"
             :url "http://opensource.org/licenses/MIT"}
   :dependencies [[org.clojure/clojure "1.6.0"]
+                 [org.clojure/core.async "0.1.346.0-17112a-alpha"]
                  [org.clojure/core.typed "0.2.84"]]
   :profiles {:dev {:dependencies [[midje "1.6.3"]
                                   [org.clojure/data.csv "0.1.2"]
