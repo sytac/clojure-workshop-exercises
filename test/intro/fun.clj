@@ -27,7 +27,7 @@
 (defn apply-twice
   "Takes a function of one argument f(x) and returns a function g so that
    g(x) = f(f(x))"
-  [f x]
+  [f]
   _)
 
 (defn apply-implicit-first
@@ -41,7 +41,7 @@
     (are [expected result] (= expected result)
          [2 3 4 5] (increment-all [1 2 3 4])
          [2 4]     (remove-odds [1 2 3 4])
-         4         ((apply-twice inc 2))
+         4         ((apply-twice inc) 2)
          42        ((apply-implicit-first + 5) 37)))
   (testing "Let's imagine that Clojure didn't have a let form. Use functions to emulate its behavior"
     (is (= (let [a 12
