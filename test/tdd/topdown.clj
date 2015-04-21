@@ -31,6 +31,8 @@
 
 (fact
   (my-rating ..movie..) => (roughly (* 3 1.2))
+
+  ; once you're done you should be able to remove this section
   (provided
     (critics-rating ..movie..)          => 3
     (with-favorite-director? ..movie..) => true))
