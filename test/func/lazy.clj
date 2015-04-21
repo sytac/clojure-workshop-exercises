@@ -18,7 +18,10 @@
 
 (defn capitalize-all
   "Applies clojure.string/capitalize to all the elements in the input seq"
-  [xs])
+  [xs]
+  (if (seq xs)
+    (cons (clojure.string/capitalize (first xs))
+          (lazy-seq (capitalize-all (rest xs))))))
 
 (deftest write-your-own
   (testing "Create a recursive function that can capitalize an infinite seq of names"
@@ -29,7 +32,7 @@
     (try
       (let [write-to-file (fn []
                             (with-open [w (io/writer "target/lazy.txt")]
-                              (map #(.write w (str % "\n")) ["one" "two" "three"])))]
+                              (doall (map #(.write w (str % "\n")) ["one" "two" "three"]))))]
         (write-to-file)
         (is (= 3 (count-lines))))
       (finally
