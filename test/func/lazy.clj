@@ -22,7 +22,7 @@
 
 (deftest write-your-own
   (testing "Create a recursive function that can capitalize an infinite seq of names"
-    (is (= 1000 (count (capitalize-all (constantly "clojure")))))))
+    (is (= 1000 (count (capitalize-all (repeat "clojure")))))))
 
 (deftest common-pitfall
   (testing "Note: with-open automatically closes on exit. How do you fix this?"
